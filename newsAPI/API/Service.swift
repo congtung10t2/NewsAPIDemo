@@ -11,8 +11,6 @@ import Alamofire
 import Combine
 import SwiftUI
 
-public typealias APICompletion<T> = (_ data: T?, _ error: Error?) -> Void
-
 class Service : ObservableObject {
   var feeds : [Article] = [] {
     willSet {
