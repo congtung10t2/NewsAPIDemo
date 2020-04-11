@@ -7,15 +7,23 @@
 //
 
 import SwiftUI
-
+import Combine
 struct ContentView: View {
+    @ObservedObject var service: Service
     var body: some View {
-        Text("Hello, World!")
+      VStack(alignment: .leading) {
+        List(service.feeds) { feed in
+          Text(feed.title)
+        }
+      }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+
     static var previews: some View {
-        ContentView()
+      
+      ContentView(service: Service())
+    
     }
 }

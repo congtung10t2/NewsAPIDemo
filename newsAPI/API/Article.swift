@@ -7,7 +7,9 @@
 //
 
 import Foundation
-class Article : Codable {
+class Article : Codable, Identifiable {
+
+  
   var source: Source?
   var author: String!
   var title: String!
@@ -25,5 +27,5 @@ class Source: Codable {
 class Response: Codable {
   var status: String?
   var totalResults: Int?
-  var articles: [Article?]?
+  var articles: [Article]?
 }
